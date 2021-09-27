@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.5.3</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
 	<artifactId>dekorate-challenge</artifactId>
@@ -15,13 +16,30 @@
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>1.8</java.version>
+		<dekorate.version>2.5.0</dekorate.version>
+		<dekorate.build>true</dekorate.build>
+		<dekorate.openshift.request-resources.cpu>1m</dekorate.openshift.request-resources.cpu> 
+		<dekorate.openshift.request-resources.memory>64Mi</dekorate.openshift.request-resources.memory>
+		<dekorate.openshift.limit-resources.cpu>5m</dekorate.openshift.limit-resources.cpu>
+		<dekorate.openshift.limit-resources.memory>256Mi</dekorate.openshift.limit-resources.memory>
 	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
+		<!-- To generate Openshift manifests -->
+		<dependency>
+			<groupId>io.dekorate</groupId>
+			<artifactId>openshift-spring-starter</artifactId>
+			<version>${dekorate.version}</version>
+		</dependency>
+		<!--  To build images using Jib instead of s2i -->
+		<dependency>
+			<groupId>io.dekorate</groupId>
+			<artifactId>jib-annotations</artifactId>
+			<version>${dekorate.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
