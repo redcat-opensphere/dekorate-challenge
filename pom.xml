@@ -17,11 +17,6 @@
 	<properties>
 		<java.version>1.8</java.version>
 		<dekorate.version>2.5.0</dekorate.version>
-		<dekorate.build>true</dekorate.build>
-		<dekorate.openshift.request-resources.cpu>1m</dekorate.openshift.request-resources.cpu> 
-		<dekorate.openshift.request-resources.memory>64Mi</dekorate.openshift.request-resources.memory>
-		<dekorate.openshift.limit-resources.cpu>5m</dekorate.openshift.limit-resources.cpu>
-		<dekorate.openshift.limit-resources.memory>256Mi</dekorate.openshift.limit-resources.memory>
 	</properties>
 	<dependencies>
 		<dependency>
