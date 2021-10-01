@@ -30,11 +30,13 @@
 			<version>${dekorate.version}</version>
 		</dependency>
 		<!--  To build images using Jib instead of s2i -->
+        <!--
 		<dependency>
 			<groupId>io.dekorate</groupId>
 			<artifactId>jib-annotations</artifactId>
 			<version>${dekorate.version}</version>
 		</dependency>
+        -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
