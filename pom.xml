@@ -30,13 +30,11 @@
 			<version>${dekorate.version}</version>
 		</dependency>
 		<!--  To build images using Jib instead of s2i -->
-        <!--
 		<dependency>
 			<groupId>io.dekorate</groupId>
 			<artifactId>jib-annotations</artifactId>
 			<version>${dekorate.version}</version>
 		</dependency>
-        -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -55,6 +53,14 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>3.1.4</version>
+                <configuration>
+                <allowInsecureRegistries>true</allowInsecureRegistries>
+                </configuration>
+            </plugin>
 		</plugins>
 	</build>
 
