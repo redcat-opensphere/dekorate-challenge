@@ -56,10 +56,62 @@
             <plugin>
                 <groupId>com.google.cloud.tools</groupId>
                 <artifactId>jib-maven-plugin</artifactId>
-                <version>3.1.4</version>
+                <version>2.0.0</version>
                 <configuration>
-                <allowInsecureRegistries>true</allowInsecureRegistries>
+                    <allowInsecureRegistries>true</allowInsecureRegistries>
+                    <!--  To deploy in dockerhub -->
+                    
+                    <from>
+                        <image>docker.io/adoptopenjdk/openjdk11</image>
+                            <auth>
+                                <username>dgonzalosgt</username>
+                                <password>1fb3f591-e611-4823-b72c-6db1fe48645b</password>
+                            </auth>
+                    </from>
+                    <to>
+                        <image>docker.io/dgonzalosgt/redcat-dekorate-challenge-jib:v1.0.0</image>
+                        <auth>
+                            <username>dgonzalosgt</username>
+                            <password>1fb3f591-e611-4823-b72c-6db1fe48645b</password>
+                        </auth>                        
+                    </to>                                
+                    
+                    <!--  To deploy in openshift -->
+                    <!--                    
+                    <from>
+                        <image>image-registry.openshift-image-registry.svc:5000/user7-challenge2/openjdk-11:latest</image>
+                        <auth>
+                            <username>unused</username>
+                            <password>sha256~86TR1qH4onhzv7iVkXHHRn4S91TFuK8eZtORxgHRw8Y</password>
+                        </auth>                            
+                    </from>
+                    <to>
+                        <image>image-registry.openshift-image-registry.svc:5000/user7-challenge2/redcat-dekorate-challenge-jib:v1.0.0-jib</image>
+                        <auth>
+                            <username>unused</username>
+                            <password>sha256~86TR1qH4onhzv7iVkXHHRn4S91TFuK8eZtORxgHRw8Y</password>
+                        </auth>                        
+                    </to>                       
+                    -->         
+                    <!-- Mix -->                    
+                    <!--
+                    <from>
+                        <image>docker.io/adoptopenjdk/openjdk11</image>
+                            <auth>
+                                <username>dgonzalosgt</username>
+                                <password>28f83d69-0719-43a3-b0a1-2512a9f40d8b</password>
+                            </auth>
+                    </from>                    
+                    <to>
+                        <image>image-registry.openshift-image-registry.svc:5000/user7-challenge2/redcat-dekorate-challenge-jib:v1.0.0-jib</image>
+                        <auth>
+                            <username>unused</username>
+                            <password>sha256~86TR1qH4onhzv7iVkXHHRn4S91TFuK8eZtORxgHRw8Y</password>
+                        </auth>                        
+                    </to>         
+                    -->
                 </configuration>
+
             </plugin>
 		</plugins>
 	</build>
